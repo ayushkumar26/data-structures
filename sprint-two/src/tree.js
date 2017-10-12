@@ -15,11 +15,11 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  console.log('Tree value:', this.value);
-  console.log('Target:', target);
+  //console.log('Tree value:', this.value);
+  //console.log('Target:', target);
   var contained = false;
   if (this.value === target) {
-    console.log('Was here');
+    //console.log('Was here');
     contained = true;
   } else { 
     for (var i = 0; i < this.children.length; i++) {
