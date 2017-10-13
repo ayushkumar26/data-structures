@@ -15,33 +15,23 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  //console.log('Tree value:', this.value);
-  //console.log('Target:', target);
+
   var contained = false;
   if (this.value === target) {
-    //console.log('Was here');
+
     contained = true;
   } else { 
     for (var i = 0; i < this.children.length; i++) {
-      //console.log('node:', this.children[i]);
+
       var isContained = this.children[i].contains(target);
-   
+      //save recursion calls into variables
       if (isContained) {
         contained = true;
       }
     }
   }
-
-
-  //var targetFound = false;
-  // _.each(this.children, function(child) {
-  //   targetFound = child.contains(target);
-  //   //return targetFound;
-  // });
-  //return targetFound;
   return contained;
 };
-
 
 
 /*
