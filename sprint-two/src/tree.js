@@ -23,7 +23,9 @@ treeMethods.contains = function(target) {
     contained = true;
   } else { 
     for (var i = 0; i < this.children.length; i++) {
+      //console.log('node:', this.children[i]);
       var isContained = this.children[i].contains(target);
+   
       if (isContained) {
         contained = true;
       }

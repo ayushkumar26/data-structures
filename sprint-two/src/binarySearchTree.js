@@ -3,5 +3,5 @@ var BinarySearchTree = function(value) {
 
 
 /*
- * Complexity: What is the time complexity of the above functions?
+ * Complexity: What is the time complexity of the above functions? - really a lot
  */
