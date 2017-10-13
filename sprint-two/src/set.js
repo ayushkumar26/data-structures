@@ -1,15 +1,13 @@
 var Set = function() {
   var set = Object.create(setPrototype);
-  set._storage = []; // fix me
+  set._storage = [];
   return set;
 };
 
 var setPrototype = {};
 
 setPrototype.add = function(item) {
-  // for (var i = 0; i < this._storage.length; i++) {
-  //   i
-  // }
+
   if (!this._storage.includes(item)) {
     this._storage.push(item);
   }
@@ -28,4 +26,5 @@ setPrototype.remove = function(item) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+  linear: add, contains, remove
  */

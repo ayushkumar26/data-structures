@@ -2,8 +2,6 @@
 
 // Instantiate a new graph
 var Graph = function() {
-  //need nodes
-  //need edges
   this.nodeList = {};
   this.edgeList = [];
 };
@@ -26,23 +24,16 @@ Graph.prototype.contains = function(node) {
 
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node) {
-  //console.log('node:', node);
   delete this.nodeList[node];
   
   for (var i = 0; i < this.edgeList.length; i++) {
     var index = this.edgeList[i] ? this.edgeList[i].indexOf(node) : -1;
-    //console.log('Other lists before splice:', this.edgeList[i]);
-    //console.log('index:', index);
+
     if (index >= 0) {
       this.edgeList[i].splice(index, 1);
     }
-    //console.log('Other lists after splice:', this.edgeList[i]);
-
   }
   this.edgeList.splice(node, 1);
-  //console.log('Edge list of node:', this.edgeList[node]);
-  
-
 };
 
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
@@ -61,8 +52,6 @@ Graph.prototype.addEdge = function(fromNode, toNode) {
 
   this.edgeList[fromNode].push(toNode);
   this.edgeList[toNode].push(fromNode);
-  //console.log('fromNode edgeList:', this.edgeList[fromNode]);
-
 
 };
 
@@ -92,6 +81,8 @@ Graph.prototype.forEachNode = function(cb) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+  constant: addNode, contains, addEdge
+  linear: removeNode, hasEdge, removeEdge, forEachNode
  */
 
 
