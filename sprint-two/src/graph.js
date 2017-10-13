@@ -26,21 +26,21 @@ Graph.prototype.contains = function(node) {
 
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node) {
-  console.log('node:', node);
+  //console.log('node:', node);
   delete this.nodeList[node];
   
   for (var i = 0; i < this.edgeList.length; i++) {
     var index = this.edgeList[i] ? this.edgeList[i].indexOf(node) : -1;
-    console.log('Other lists before splice:', this.edgeList[i]);
-    console.log('index:', index);
+    //console.log('Other lists before splice:', this.edgeList[i]);
+    //console.log('index:', index);
     if (index >= 0) {
       this.edgeList[i].splice(index, 1);
     }
-    console.log('Other lists after splice:', this.edgeList[i]);
+    //console.log('Other lists after splice:', this.edgeList[i]);
 
   }
   this.edgeList.splice(node, 1);
-  console.log('Edge list of node:', this.edgeList[node]);
+  //console.log('Edge list of node:', this.edgeList[node]);
   
 
 };
