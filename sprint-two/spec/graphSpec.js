@@ -68,4 +68,18 @@ describe('graph', function() {
     expect(graph.hasEdge(3, 5)).to.equal(true);
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
+
+  it('our unit test: should remove all edges between nodes when a node is removed', function() {
+    graph.addNode(1);
+    graph.addNode(2);
+    graph.addNode(3);
+    graph.addEdge(1, 2);
+    graph.addEdge(2, 3);
+    graph.addEdge(1, 3);
+    expect(graph.hasEdge(1, 3)).to.equal(true);
+    expect(graph.hasEdge(1, 2)).to.equal(true);
+    graph.removeNode(1);
+    expect(graph.hasEdge(1, 2)).to.equal(false);
+    expect(graph.hasEdge(1, 3)).to.equal(false);
+  });
 });

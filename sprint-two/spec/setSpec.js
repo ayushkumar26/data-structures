@@ -23,5 +23,12 @@ describe('set', function() {
     set.remove('Mel Gibson');
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
+  
+  it('our unit test: should remove Kiyeon from our set', function() {
+    set.add('Kiyeon');
+    set.add('Kiyeon');
+    set.remove('Kiyeon');
+    expect(set.contains('Kiyeon')).to.equal(false);
+  });
 
 });

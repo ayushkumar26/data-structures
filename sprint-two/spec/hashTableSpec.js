@@ -73,4 +73,10 @@ describe('hashTable', function() {
     hashTable.remove('Mr.');
     expect(hashTable._limit).to.equal(8);
   });
+
+  it('our unit test: should return same value when given Kiyeon', function() {
+    hashTable.insert('Kiyeon', 'Park');
+    expect(hashTable.retrieve('Kiyeon')).to.equal('Park');
+    expect(hashTable.retrieve('Kiyeon')).to.equal('Park');
+  });
 });

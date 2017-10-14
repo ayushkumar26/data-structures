@@ -37,4 +37,13 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+ 
+  it('our unit test: should work for negatives', function() {
+    binarySearchTree.insert(-2);
+    binarySearchTree.insert(-3);
+    binarySearchTree.insert(-6);
+    expect(binarySearchTree.contains(-3)).to.equal(true);
+    expect(binarySearchTree.contains(6)).to.equal(false);
+  });
+  
 });
