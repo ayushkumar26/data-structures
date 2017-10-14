@@ -10,16 +10,11 @@ var Graph = function() {
 Graph.prototype.addNode = function(node) {
   this.nodeList[node] = node;
   this.edgeList[node] = [];
-  
 };
 
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(node) {
-  if (this.nodeList.hasOwnProperty(node)) {
-    return true;
-  }
-  return false;
-
+  return this.nodeList.hasOwnProperty(node);
 };
 
 // Removes a node from the graph.
@@ -51,19 +46,13 @@ Graph.prototype.addEdge = function(fromNode, toNode) {
 
 // Remove an edge between any two specified (by value) nodes.
 Graph.prototype.removeEdge = function(fromNode, toNode) {
-
-
   var indexFrom = this.edgeList[fromNode] ? this.edgeList[fromNode].indexOf(toNode) : -1; 
   var indexTo = this.edgeList[toNode] ? this.edgeList[toNode].indexOf(fromNode) : -1;
 
   if (indexFrom > -1) {
     this.edgeList[fromNode].splice(indexFrom, 1);
-  }
-
-  if (indexTo > -1) {
     this.edgeList[toNode].splice(indexTo, 1);
   }
-
 };
 
 // Pass in a callback which will be executed on each node of the graph.

@@ -19,17 +19,13 @@ treeMethods.contains = function(target) {
 
   var contained = false;
   if (this.value === target) {
-
     contained = true;
   } else { 
-    for (var i = 0; i < this.children.length; i++) {
-
-      var isContained = this.children[i].contains(target);
-      //save recursion calls into variables
-      if (isContained) {
+    this.children.forEach(child => {
+      if (child.contains(target)) {
         contained = true;
       }
-    }
+    });
   }
   return contained;
 };

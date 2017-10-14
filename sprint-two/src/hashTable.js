@@ -6,7 +6,15 @@ var HashTable = function() {
 };
 
 HashTable.prototype.insert = function(k, v) {
+  
+  // var size = Object.keys(this._storage).length;
+  // if ((size / this._limit) >= 0.75) {
+  //   this._limit *= 2;
+  //   this._storage = LimitedArray(this._limit)
+  // }
+  //console.log('size:', size);
 
+  //console.log(Array.isArray(this._storage));
   var index = getIndexBelowMaxForKey(k, this._limit); 
   var tuple = [];
   tuple[0] = k;
