@@ -52,4 +52,17 @@ describe('tree', function() {
     expect(tree.contains(10)).to.equal(true);
   });
 
+  it('should add a parent property and then detect that property in a child', function() {
+    tree.addChild(5);
+    expect(tree.children[0].parent.value).to.equal(tree.value);
+  });
+
+  it('should dissassociate the parent and child both ways', function() {
+    tree.addChild(5);
+    expect(tree.contains(5)).to.equal(true);
+    tree.children[0].removeFromParent();
+    expect(tree.contains(5)).to.equal(false);
+  });
+  
+
 });
